@@ -1,0 +1,15 @@
+parameters:
+  buzz.client: 'Buzz\Client\Curl'
+  buzz.message_factory: 'Buzz\Message\Factory\Factory'
+  eventbrite.http_adapter.class: 'EventbriteApiConnector\HttpAdapter\BuzzHttpAdapter'
+  eventbrite.http_adapter.argument: '@buzz'
+  eventbrite.api_keys:
+    app_key: YOUR_APP_KEY
+    user_key: YOUR_USER_KEY
+  data_adapter.class: 'Phplx\DataAdapter\FileSystemDataAdapter'
+  provider.class: 'Phplx\Provider\EventbriteProvider'
+  twitter_handler.class: 'Phplx\SocialAdapter\TwitterAdapter'
+  twitter_handler.consumer_key: 'YOUR_TWITTER_CONSUMER_KEY'
+  twitter_handler.consumer_secret: 'YOUR_TWITTER_CONSUMER_SECRET'
+  twitter_handler.access_token: 'YOUR_TWITTER_ACCESS_TOKEN'
+  twitter_handler.access_token_secret: 'YOUR_TWITTER_ACCESS_TOKEN_SECRET'

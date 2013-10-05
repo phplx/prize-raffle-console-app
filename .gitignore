@@ -1,0 +1,6 @@
+/bin/
+/vendor/
+/config/provider.json
+/config/parameters.yaml
+/cache/
+/composer.phar
