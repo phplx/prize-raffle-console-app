@@ -62,7 +62,7 @@ EOT
         if ($this->event->hasAttendees()) {
             $doGetAttendees = $this->getHelper('dialog')->askConfirmation(
                 $output,
-                'The list of attendees for this event ID already exists, do you want to override? (Default is no)',
+                'The list of attendees for this event ID already exists, do you want to override? (no) ',
                 false
             );
         }
@@ -88,7 +88,7 @@ EOT
         if (!$input->getArgument('event_id')) {
             $eventId = $this->getHelper('dialog')->askAndValidate(
                 $output,
-                'Please insert the event ID:',
+                'Please insert the event ID: ',
                 function ($eventId) {
                     if (empty($eventId)) {
                         throw new \Exception('The event ID can not be empty.');

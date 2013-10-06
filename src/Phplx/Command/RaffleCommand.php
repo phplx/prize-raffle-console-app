@@ -80,7 +80,7 @@ EOT
         if (!$input->getArgument('event_id')) {
             $eventId = $this->getHelper('dialog')->askAndValidate(
                 $output,
-                'Please insert the event ID:',
+                'Please insert the event ID: ',
                 function ($eventId) {
                     if (empty($eventId)) {
                         throw new \InvalidArgumentException('The event ID can not be empty.');
@@ -171,7 +171,7 @@ EOT
     {
         return $this->getHelper('dialog')->askConfirmation(
             $output,
-            "Do you want to send this tweet: \"{$tweetMessage}\" ? (yes/no) ",
+            "Do you want to send this tweet: \"{$tweetMessage}\" ? (no) ",
             false
         );
     }
@@ -190,7 +190,7 @@ EOT
 
         return $this->getHelper('dialog')->select(
             $output,
-            'Choose the prize to raffle:',
+            'Choose the prize to raffle: ',
             $prizes,
             0
         );
