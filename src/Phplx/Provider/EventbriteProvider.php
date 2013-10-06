@@ -74,13 +74,20 @@ class EventbriteProvider
         }
     }
 
+    /**
+     * Get the Twitter username
+     *
+     * @param \stdClass $attendee
+     * @return null
+     *
+     * @TODO - Make the twitter username question maps dynamically without knowing the question text, probably with DI parameter
+     */
     private function getTwitterUsername(\stdClass $attendee)
     {
         if (!isset($attendee->answers) || empty($attendee->answers)) {
             return null;
         }
 
-        // @TODO - Make the twitter username question maps dynamic, probably with DI parameter
         if ("Twitter username" === $attendee->answers[0]->answer->question) {
             return $attendee->answers[0]->answer->answer_text;
         }

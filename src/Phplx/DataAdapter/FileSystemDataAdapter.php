@@ -94,7 +94,7 @@ class FileSystemDataAdapter implements DataAdapterInterface
         $event = new Event($dataObj->event->id);
 
         if (isset($dataObj->event->attendees)) {
-            // clean the array
+            // cleans the array
             $attendees = array_filter($dataObj->event->attendees);
 
             foreach ($attendees as $item) {
@@ -112,7 +112,7 @@ class FileSystemDataAdapter implements DataAdapterInterface
         }
 
         if (isset($dataObj->event->prizes)) {
-            // clean the array
+            // cleans the array
             $prizes = array_filter($dataObj->event->prizes);
 
             foreach ($prizes as $item) {
