@@ -93,19 +93,29 @@ class FileSystemDataAdapter implements DataAdapterInterface
 
         $event = new Event($dataObj->event->id);
 
-        if (isset($dataObj->event->attendees) && !empty($dataObj->event->attendees)) {
-            foreach ($dataObj->event->attendees as $item) {
+        if (isset($dataObj->event->attendees)) {
+            // clean the array
+            $attendees = array_filter($dataObj->event->attendees);
+
+            foreach ($attendees as $item) {
                 $attendee = new Attendee();
                 $attendee->setId($item->id);
                 $attendee->setName($item->name);
                 $attendee->setEmail($item->email);
 
+                if (isset($item->twitterHandler) && !empty($item->twitterHandler)) {
+                    $attendee->setTwitterHandler($item->twitterHandler);
+                }
+
                 $event->addAttendee($attendee);
             }
         }
 
-        if (isset($dataObj->event->prizes) && !empty($dataObj->event->prizes)) {
-            foreach ($dataObj->event->prizes as $item) {
+        if (isset($dataObj->event->prizes)) {
+            // clean the array
+            $prizes = array_filter($dataObj->event->prizes);
+
+            foreach ($prizes as $item) {
                 $prize = new Prize();
                 $prize->setSponsorName($item->sponsor);
                 $prize->setPrizeTitle($item->prize);
