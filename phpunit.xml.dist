@@ -13,7 +13,7 @@
         >
     <testsuites>
         <testsuite name="phplx Prize Raffle Console Application test suite">
-            <directory>./Tests/Phplx/</directory>
+            <directory>./tests/Phplx/</directory>
         </testsuite>
     </testsuites>
 
