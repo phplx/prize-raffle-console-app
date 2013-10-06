@@ -27,6 +27,10 @@ class Attendee
      * @var string
      */
     private $email;
+    /**
+     * @var string
+     */
+    private $twitterHandler;
 
     /**
      * Converts Attendee properties to Array
@@ -36,9 +40,10 @@ class Attendee
     public function toArray()
     {
         return array(
-            'id' => $this->getId(),
-            'name' => $this->getName(),
-            'email' => $this->getEmail()
+            'id' => $this->id,
+            'name' => $this->name,
+            'email' => $this->email,
+            'twitterHandler' => $this->twitterHandler
         );
     }
 
@@ -88,5 +93,27 @@ class Attendee
     public function setEmail($email)
     {
         $this->email = $email;
+    }
+
+    /**
+     * @param string $twitterHandler
+     */
+    public function setTwitterHandler($twitterHandler)
+    {
+        $this->twitterHandler = str_replace('@', '', $twitterHandler);
+    }
+
+    /**
+     * Gets the Twitter Handler if exists or the attendee Name
+     *
+     * @return string
+     */
+    public function getTweetName()
+    {
+        if (isset($this->twitterHandler)) {
+            return '@' . $this->twitterHandler;
+        }
+
+        return $this->name;
     }
 } 
