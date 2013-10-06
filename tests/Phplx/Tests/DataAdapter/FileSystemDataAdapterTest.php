@@ -41,6 +41,12 @@ class FileSystemDataAdapterTest extends \PHPUnit_Framework_TestCase
                              'id' => 1,
                              'name' => 'Daniel Gomes',
                              'email' => 'me@danielcsgomes.com'
+                         ),
+                         array(
+                             'id' => 1,
+                             'name' => 'Daniel Gomes',
+                             'email' => 'me@danielcsgomes.com',
+                             'twitterHandler' => 'danielcsgomes'
                          )
                      ),
                      'prizes' => array(

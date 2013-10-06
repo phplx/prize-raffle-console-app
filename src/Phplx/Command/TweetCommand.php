@@ -59,7 +59,7 @@ EOT
         if (!$input->getArgument('tweet_message')) {
             $tweetMessage = $this->getHelper('dialog')->askAndValidate(
                 $output,
-                'Please insert the event ID:',
+                'Please insert the event ID: ',
                 function ($tweetMessage) {
                     if (empty($tweetMessage)) {
                         throw new \InvalidArgumentException('The tweet message can not be empty.');

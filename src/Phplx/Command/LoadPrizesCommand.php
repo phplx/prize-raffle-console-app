@@ -63,7 +63,7 @@ EOT
         if ($this->event->hasPrizes()) {
             $doLoadPrizes = $this->getHelper('dialog')->askConfirmation(
                 $output,
-                'The list of prizes for this event ID already exists, do you want to override? (Default is no)',
+                'The list of prizes for this event ID already exists, do you want to override? (no) ',
                 false
             );
         }
@@ -127,7 +127,7 @@ EOT
         if (!$input->getArgument('event_id')) {
             $eventId = $this->getHelper('dialog')->askAndValidate(
                 $output,
-                'Please insert the event ID:',
+                'Please insert the event ID: ',
                 function ($eventId) {
                     if (empty($eventId)) {
                         throw new \Exception('The event ID can not be empty.');
@@ -141,7 +141,7 @@ EOT
         if (!$input->getArgument('file')) {
             $file = $this->getHelper('dialog')->askAndValidate(
                 $output,
-                'Please insert the file name within the full path. Only JSON format is allowed:',
+                'Please insert the file name within the full path. Only JSON format is allowed: ',
                 function ($file) {
                     if (!file_exists($file)) {
                         throw new \Exception('The file does not exist.');

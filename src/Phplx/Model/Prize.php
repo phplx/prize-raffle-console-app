@@ -114,7 +114,7 @@ class Prize
     public function setWinner(Attendee $winner)
     {
         $this->setTweetMessage(
-            sprintf($this->tweetMessage, $winner->getName())
+            sprintf($this->tweetMessage, $winner->getTweetName())
         );
         $this->winner = $winner;
     }
