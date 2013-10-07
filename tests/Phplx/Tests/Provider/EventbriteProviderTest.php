@@ -55,6 +55,37 @@ class EventbriteProviderTest extends \PHPUnit_Framework_TestCase
                              'email' => 'me@danielcsgomes.com'
                          )
                      ),
+                     array(
+                         'attendee' => array(
+                             'order_id' => 1,
+                             'first_name' => 'Daniel',
+                             'last_name' => 'Gomes',
+                             'email' => 'me@danielcsgomes.com',
+                             'answers' => array(
+                                 array(
+                                     'answer' => array(
+                                         'question' => 'Twitter username',
+                                         'answer_text' => 'danielcsgomes'
+                                     )
+                                 )
+                             )
+                         )
+                     ),
+                     array(
+                         'attendee' => array(
+                             'order_id' => 1,
+                             'first_name' => 'Daniel',
+                             'last_name' => 'Gomes',
+                             'email' => 'me@danielcsgomes.com',
+                             'answers' => array(
+                                 array(
+                                     'answer' => array(
+                                         'question' => 'fake'
+                                     )
+                                 )
+                             )
+                         )
+                     )
                  )
             )
         );

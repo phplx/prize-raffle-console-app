@@ -216,6 +216,12 @@ class Event
         return false;
     }
 
+    /**
+     * Gets a random Attendee and remove it from the Event
+     *
+     * @return Attendee The attendee
+     * @throws \OutOfRangeException
+     */
     public function popRandomAttendee()
     {
         if (0 === count($this->attendees)) {
@@ -234,6 +240,12 @@ class Event
         return $attendee;
     }
 
+    /**
+     * Remove a prize from Event
+     *
+     * @param int $index
+     * @return Prize The prize
+     */
     public function popPrize($index)
     {
         $prize = $this->prizes[$index];
