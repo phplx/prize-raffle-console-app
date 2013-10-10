@@ -43,16 +43,8 @@ class RaffleCommand extends Command
         $this
             ->setName('meetup:raffle')
             ->setDescription('Starts the Prize Raffle.')
-            ->setDefinition(
-                array(
-                     new InputArgument('event_id', InputArgument::REQUIRED, 'The event ID')
-                )
-            )
-            ->setHelp(
-                <<<EOT
-                The <info>meetup:raffle</info> command starts the Prize Raffle of an Event.
-EOT
-            );
+            ->addArgument('event_id', InputArgument::REQUIRED, 'The event ID')
+            ->setHelp('The <info>meetup:raffle</info> command starts the Prize Raffle of an Event.');
     }
 
     /**

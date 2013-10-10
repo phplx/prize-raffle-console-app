@@ -29,16 +29,8 @@ class ListWinnersCommand extends Command
         $this
             ->setName('meetup:prizes:winners')
             ->setDescription('Lists the winners of the prizes of an Event.')
-            ->setDefinition(
-                array(
-                     new InputArgument('event_id', InputArgument::REQUIRED, 'The event ID'),
-                )
-            )
-            ->setHelp(
-                <<<EOT
-                The <info>meetup:prizes:winners</info> command will list the winners of the prizes of an event.
-EOT
-            );
+            ->addArgument('event_id', InputArgument::REQUIRED, 'The event ID')
+            ->setHelp("The <info>meetup:prizes:winners</info> command will list the winners of the prizes of an event.");
     }
 
     /**
