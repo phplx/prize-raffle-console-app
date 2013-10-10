@@ -29,16 +29,8 @@ class TweetCommand extends Command
         $this
             ->setName('twitter:tweet')
             ->setDescription('Sends a tweet from @phplx account.')
-            ->setDefinition(
-                array(
-                     new InputArgument('tweet_message', InputArgument::REQUIRED, 'The message of the tweet')
-                )
-            )
-            ->setHelp(
-                <<<EOT
-                The <info>twitter:tweet</info> command send a tweet from @phplx account.
-EOT
-            );
+            ->addArgument('tweet_message', InputArgument::REQUIRED, 'The message of the tweet')
+            ->setHelp('The <info>twitter:tweet</info> command send a tweet from @phplx account.');
     }
 
     /**
