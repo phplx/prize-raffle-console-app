@@ -29,7 +29,7 @@ abstract class BaseCommandTest extends \PHPUnit_Framework_TestCase
         $container = include __DIR__ . '/../../../../src/container.php';
 
         $loader = new YamlFileLoader($container, new FileLocator($configDirectories));
-        $loader->load('parameters.yaml');
+        $loader->load('parameters.yaml.dist');
 
         $this->application->setContainer($container);
     }
