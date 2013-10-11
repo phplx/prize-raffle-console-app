@@ -36,7 +36,9 @@ class FetchAttendeesCommand extends Command
             ->setName('meetup:attendees:get')
             ->setDescription('Fetchs the attendees for the meetup from the chosen Provider.')
             ->addArgument('event_id', InputArgument::REQUIRED, 'The event ID')
-            ->setHelp('The <info>meetup:attendees:get</info> command will get all attendees for an event ID from EventBrite.');
+            ->setHelp(
+                'The <info>meetup:attendees:get</info> command will get all attendees for an event ID from EventBrite.'
+            );
     }
 
     /**

@@ -16,7 +16,7 @@ use Phplx\Model\Attendee;
 /**
  * @author  Daniel Gomes <me@danielcsgomes.com>
  */
-class EventbriteProvider
+class EventbriteProvider implements ProviderInterface
 {
     /**
      * @var Eventbrite
@@ -33,7 +33,7 @@ class EventbriteProvider
      *
      * @param string $eventId The event Id
      *
-     * @return array A list of Phplx\Model\Attendee
+     * @return array A list of \Phplx\Model\Attendee
      */
     public function getAttendees($eventId)
     {
@@ -44,7 +44,7 @@ class EventbriteProvider
 
     /**
      * @param string $json The response content must be a valid json string
-     * @return array A list of Phplx\Model\Attendee
+     * @return array A list of \Phplx\Model\Attendee
      * @throws \Exception
      */
     private function parseAttendees($json)
