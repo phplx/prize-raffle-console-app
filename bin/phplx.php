@@ -21,8 +21,7 @@ use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 $configDirectories = array(
-    __DIR__ . '/../config',
-    __DIR__ . '/../cache'
+    __DIR__ . '/../config'
 );
 
 $container = include __DIR__ . '/../src/container.php';

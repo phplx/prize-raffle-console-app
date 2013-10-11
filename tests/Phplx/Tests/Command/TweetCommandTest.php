@@ -12,7 +12,7 @@ class TweetCommandTest extends BaseCommandTest
         // Set the TwitterSocialHandler Mock
         $this->application->getContainer()->setParameter(
             'twitter_social_handler.class',
-            'Phplx\Tests\Command\MockTwitterSocialHandler'
+            'Phplx\Tests\MockTwitterSocialHandler'
         );
 
         $this->application->add(new TweetCommand());
@@ -36,7 +36,7 @@ class TweetCommandTest extends BaseCommandTest
         // Set the TwitterSocialHandler Mock
         $this->application->getContainer()->setParameter(
             'twitter_social_handler.class',
-            'Phplx\Tests\Command\MockTwitterSocialHandlerFailingTweet'
+            'Phplx\Tests\MockTwitterSocialHandlerFailingTweet'
         );
 
         $this->application->add(new TweetCommand());
@@ -53,21 +53,5 @@ class TweetCommandTest extends BaseCommandTest
         );
 
         $this->assertContains('An error occur when sending the Tweet.', $commandTester->getDisplay());
-    }
-}
-
-class MockTwitterSocialHandler
-{
-    public function tweet($message)
-    {
-        return $message;
-    }
-}
-
-class MockTwitterSocialHandlerFailingTweet
-{
-    public function tweet($message)
-    {
-        return false;
     }
 }

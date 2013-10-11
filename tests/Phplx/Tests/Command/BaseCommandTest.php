@@ -23,8 +23,7 @@ abstract class BaseCommandTest extends \PHPUnit_Framework_TestCase
 
 
         $configDirectories = array(
-            __DIR__ . '/../../../../config',
-            $this->cacheDir
+            __DIR__ . '/../../../../config'
         );
 
         $container = include __DIR__ . '/../../../../src/container.php';
