@@ -1,0 +1,13 @@
+[
+  {
+    "sponsor": "Sponsor Name",
+    "prize": "Prize Name",
+    "tweet_message": "%s is the #winner of the prize from @Sponsor #yourhashtag",
+    "winner": {
+      "id": 1,
+      "name": "Daniel Gomes",
+      "email": "me@danielcsgomes.com",
+      "twitterHandler": "danielcsgomes"
+    }
+  }
+]

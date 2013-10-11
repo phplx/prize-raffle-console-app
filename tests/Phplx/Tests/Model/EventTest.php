@@ -75,13 +75,13 @@ class EventTest extends \PHPUnit_Framework_TestCase
         $event = new Event('test');
         $event->setPrizes(array('Prize'));
         $event->setAttendees(array('Daniel'));
-        
+
         $this->assertEquals(1, $event->getNumberOfPrizes());
         $this->assertEquals(1, $event->getNumberOfAttendees());
-        
+
         $event->clearAttendees();
         $event->clearPrizes();
-        
+
         $this->assertEquals(0, $event->getNumberOfPrizes());
         $this->assertEquals(0, $event->getNumberOfAttendees());
     }
@@ -96,7 +96,7 @@ class EventTest extends \PHPUnit_Framework_TestCase
                 'prizes' => $event->getPrizes(true)
             )
         );
-        
+
         $this->assertEquals($expected, $event->toArray());
         $this->assertEquals(json_encode($expected), $event->toJson());
     }

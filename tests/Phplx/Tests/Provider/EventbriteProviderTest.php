@@ -16,7 +16,7 @@ use Phplx\Provider\EventbriteProvider;
 /**
  * @author Daniel Gomes <me@danielcsgomes.com>
  */
-class EventbriteProviderTest extends \PHPUnit_Framework_TestCase 
+class EventbriteProviderTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var EventbriteProvider
@@ -30,15 +30,15 @@ class EventbriteProviderTest extends \PHPUnit_Framework_TestCase
      * @var Eventbrite
      */
     private $eventbrite;
-    
+
     public function setUp()
     {
         if (!class_exists('EventbriteApiConnector\Eventbrite')) {
             $this->markTestSkipped('The EventbriteApiConnector library has to be installed');
         }
-        
-        $this->eventbrite = $this->getMock('EventbriteApiConnector\Eventbrite',array('post'),array(),'',false);
-        
+
+        $this->eventbrite = $this->getMock('EventbriteApiConnector\Eventbrite', array('post'), array(), '', false);
+
         $this->eventbriteProvider = new EventbriteProvider($this->eventbrite);
     }
 
@@ -93,9 +93,9 @@ class EventbriteProviderTest extends \PHPUnit_Framework_TestCase
         $this->eventbrite->expects($this->once())
             ->method('post')
             ->will($this->returnValue($content));
-            
+
         $attendees = $this->eventbriteProvider->getAttendees('test');
-        
+
         $this->assertGreaterThan(0, count($attendees));
         $this->assertEquals('array', gettype($attendees));
     }
