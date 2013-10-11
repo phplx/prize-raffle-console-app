@@ -34,13 +34,13 @@ $container->register('provider', '%provider.class%')
     ->setArguments(array('%provider.class.argument%'));
 
 // Service for TwitterSocialHandler
-$container->register('twitter_handler', '%twitter_handler.class%')
+$container->register('twitter_social_handler', '%twitter_social_handler.class%')
     ->setArguments(
         array(
-             '%twitter_handler.consumer_key%',
-             '%twitter_handler.consumer_secret%',
-             '%twitter_handler.access_token%',
-             '%twitter_handler.access_token_secret%'
+             '%twitter_social_handler.consumer_key%',
+             '%twitter_social_handler.consumer_secret%',
+             '%twitter_social_handler.access_token%',
+             '%twitter_social_handler.access_token_secret%'
         )
     );
 

@@ -39,10 +39,12 @@ class TwitterSocialHandler
      * Sends a tweet
      *
      * @param $message The tweet message
+     *
+     * @return mixed True if the tweet was sent successfully
      */
     public function tweet($message)
     {
-        $this->oauth->fetch(
+        return $this->oauth->fetch(
             'https://api.twitter.com/1.1/statuses/update.json',
             array('status' => $message),
             'POST'

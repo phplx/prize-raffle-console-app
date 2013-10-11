@@ -39,8 +39,15 @@ class TweetCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $tweetMessage = $input->getArgument('tweet_message');
-        $twitterHandler = $this->getApplication()->getContainer()->get('twitter_handler');
-        $twitterHandler->tweet($tweetMessage);
+        $twitterHandler = $this->getApplication()->getContainer()->get('twitter_social_handler');
+        $result = $twitterHandler->tweet($tweetMessage);
+
+        if ($result) {
+            $output->writeln('<info>Tweet sent successfully</info>');
+            return;
+        }
+
+        $output->writeln('An error occur when sending the Tweet.');
     }
 
     /**
