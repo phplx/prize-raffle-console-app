@@ -32,16 +32,6 @@ abstract class BaseCommandTest extends \PHPUnit_Framework_TestCase
         $loader = new YamlFileLoader($container, new FileLocator($configDirectories));
         $loader->load('parameters.yaml');
 
-        $container->setParameter('twitter_social_handler.class', 'Phplx\Tests\Command\MockTwitterSocialHandler');
-
         $this->application->setContainer($container);
-    }
-}
-
-class MockTwitterSocialHandler
-{
-    public function tweet($message)
-    {
-        return $message;
     }
 }

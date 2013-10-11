@@ -47,7 +47,7 @@ class TweetCommand extends Command
             return;
         }
 
-        $output->writeln('An error occur when sending the Tweet.');
+        $output->writeln('<error>An error occur when sending the Tweet.</error>');
     }
 
     /**
