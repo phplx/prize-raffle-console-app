@@ -64,6 +64,4 @@ class Application extends BaseApplication implements ContainerAwareInterface
     {
         return $this->dispatcher;
     }
-
-
 }

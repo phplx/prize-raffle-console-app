@@ -34,17 +34,9 @@ class FetchAttendeesCommand extends Command
     {
         $this
             ->setName('meetup:attendees:get')
-            ->setDescription('Gets the meetup attendees list.')
-            ->setDefinition(
-                array(
-                     new InputArgument('event_id', InputArgument::REQUIRED, 'The event ID'),
-                )
-            )
-            ->setHelp(
-                <<<EOT
-                The <info>meetup:attendees:get</info> command will get all attendees for an event ID from EventBrite.
-EOT
-            );
+            ->setDescription('Fetchs the attendees for the meetup from the chosen Provider.')
+            ->addArgument('event_id', InputArgument::REQUIRED, 'The event ID')
+            ->setHelp('The <info>meetup:attendees:get</info> command will get all attendees for an event ID from EventBrite.');
     }
 
     /**
@@ -62,7 +54,7 @@ EOT
         if ($this->event->hasAttendees()) {
             $doGetAttendees = $this->getHelper('dialog')->askConfirmation(
                 $output,
-                'The list of attendees for this event ID already exists, do you want to override? (Default is no)',
+                'The list of attendees for this event ID already exists, do you want to override? (no) ',
                 false
             );
         }
@@ -88,7 +80,7 @@ EOT
         if (!$input->getArgument('event_id')) {
             $eventId = $this->getHelper('dialog')->askAndValidate(
                 $output,
-                'Please insert the event ID:',
+                'Please insert the event ID: ',
                 function ($eventId) {
                     if (empty($eventId)) {
                         throw new \Exception('The event ID can not be empty.');

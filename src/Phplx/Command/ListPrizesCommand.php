@@ -35,16 +35,8 @@ class ListPrizesCommand extends Command
         $this
             ->setName('meetup:prizes:list')
             ->setDescription('Lists the prizes of an Event.')
-            ->setDefinition(
-                array(
-                     new InputArgument('event_id', InputArgument::REQUIRED, 'The event ID'),
-                )
-            )
-            ->setHelp(
-                <<<EOT
-                The <info>meetup:prizes:list</info> command will list the prize of an event.
-EOT
-            );
+            ->addArgument('event_id', InputArgument::REQUIRED, 'The event ID')
+            ->setHelp('The <info>meetup:prizes:list</info> command will list the prize of an event.');
     }
 
     /**
@@ -74,7 +66,7 @@ EOT
         if (!$input->getArgument('event_id')) {
             $eventId = $this->getHelper('dialog')->askAndValidate(
                 $output,
-                'Please insert the event ID:',
+                'Please insert the event ID: ',
                 function ($eventId) {
                     if (empty($eventId)) {
                         throw new \Exception('The event ID can not be empty.');
