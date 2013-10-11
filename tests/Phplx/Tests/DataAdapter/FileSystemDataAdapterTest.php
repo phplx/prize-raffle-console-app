@@ -15,13 +15,13 @@ use Phplx\DataAdapter\FileSystemDataAdapter;
 /**
  * @author Daniel Gomes <me@danielcsgomes.com>
  */
-class FileSystemDataAdapterTest extends \PHPUnit_Framework_TestCase 
+class FileSystemDataAdapterTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var FileSystemDataAdapter
      */
     private $fsDataAdapter;
-    
+
     public function setUp()
     {
         $this->fsDataAdapter = new FileSystemDataAdapter();
@@ -103,7 +103,7 @@ class FileSystemDataAdapterTest extends \PHPUnit_Framework_TestCase
     {
         $tmpFile = sys_get_temp_dir() . '/event.json';
         file_put_contents($tmpFile, '');
-        
+
         $this->assertTrue($this->fsDataAdapter->hasEvent('event'));
         unlink($tmpFile);
     }

@@ -21,17 +21,12 @@ use Symfony\Component\EventDispatcher\EventDispatcher;
  */
 class Application extends BaseApplication implements ContainerAwareInterface
 {
-    const VERSION = '1.0.0';
+    const VERSION = '1.0.1-dev';
 
     /**
      * @var ContainerInterface|null
      */
     private $container;
-
-    /**
-     * @var EventDispatcher
-     */
-    private $dispatcher;
 
     /**
      * @return ContainerInterface
@@ -47,21 +42,5 @@ class Application extends BaseApplication implements ContainerAwareInterface
     public function setContainer(ContainerInterface $container = null)
     {
         $this->container = $container;
-    }
-
-    /**
-     * @param EventDispatcher $dispatcher
-     */
-    public function setDispatcher(EventDispatcher $dispatcher)
-    {
-        $this->dispatcher = $dispatcher;
-    }
-
-    /**
-     * @return EventDispatcher
-     */
-    public function getDispatcher()
-    {
-        return $this->dispatcher;
     }
 }

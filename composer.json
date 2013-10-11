@@ -23,7 +23,7 @@
     "autoload": {
         "classmap": ["src/", "vendor/"],
         "psr-0": {
-            "Phplx\\Raffle\\": "src/"
+            "Phplx": "src/"
         }
     }
 }

@@ -38,7 +38,9 @@ class LoadPrizesCommand extends Command
             ->setDescription('Loads prizes of an Event from an external file.')
             ->addArgument('event_id', InputArgument::REQUIRED, 'The event ID')
             ->addArgument('file', InputArgument::REQUIRED, 'The file to be loaded')
-            ->setHelp('The <info>meetup:prizes:load</info> command will load prizes to an Event from an external file.');
+            ->setHelp(
+                'The <info>meetup:prizes:load</info> command will load prizes to an Event from an external file.'
+            );
     }
 
     /**
