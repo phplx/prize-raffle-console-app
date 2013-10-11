@@ -37,7 +37,7 @@ $listPrizesCmd = new ListPrizesCommand();
 $listWinnersCmd = new ListWinnersCommand();
 $sendTweetCmd = new TweetCommand();
 
-$app = new Application();
+$app = new Application('phplx Prize Raffle Console Application', Application::VERSION);
 $app->setContainer($container);
 
 $app->addCommands(
