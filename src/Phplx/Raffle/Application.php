@@ -20,7 +20,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  */
 class Application extends BaseApplication implements ContainerAwareInterface
 {
-    const VERSION = '1.0.1-dev';
+    const VERSION = '1.0.1';
     /**
      * @var ContainerInterface|null
      */
