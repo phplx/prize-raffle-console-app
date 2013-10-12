@@ -37,7 +37,6 @@ php bin/phplx.php
 
 ## TODO
 
- * Add **Tests** to Commands
  * Add new commands like **listing all events**, **send email to winner**.
  * Add more **DataAdapters** and **Providers**
 
