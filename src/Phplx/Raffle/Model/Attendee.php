@@ -116,4 +116,4 @@ class Attendee
 
         return $this->name;
     }
-} 
+}

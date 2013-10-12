@@ -156,4 +156,4 @@ class FileSystemDataAdapterTest extends \PHPUnit_Framework_TestCase
         $this->assertInternalType('array', $this->fsDataAdapter->getWinners('testSaveWinner'));
         unlink($filename);
     }
-}   
+}

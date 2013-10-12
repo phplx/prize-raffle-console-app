@@ -137,4 +137,4 @@ class Prize
     {
         return $this->getSponsorName() . ' - ' . $this->getPrizeTitle();
     }
-} 
+}

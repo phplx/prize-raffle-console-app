@@ -20,4 +20,4 @@ interface ProviderInterface
      * @return array A list of \Phplx\Raffle\Model\Attendee
      */
     public function getAttendees($eventId);
-} 
+}

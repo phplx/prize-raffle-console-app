@@ -257,4 +257,4 @@ class Event
 
         return $prize;
     }
-} 
+}

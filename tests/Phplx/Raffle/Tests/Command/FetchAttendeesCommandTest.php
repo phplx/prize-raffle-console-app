@@ -35,4 +35,3 @@ class FetchAttendeesCommandTest extends BaseCommandTest
         $this->assertContains('You can now start the prizes raffle!', $commandTester->getDisplay());
     }
 }
-

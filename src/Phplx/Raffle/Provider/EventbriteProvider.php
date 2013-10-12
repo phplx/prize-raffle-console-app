@@ -94,4 +94,4 @@ class EventbriteProvider implements ProviderInterface
 
         return null;
     }
-} 
+}
