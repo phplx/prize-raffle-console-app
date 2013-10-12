@@ -13,13 +13,13 @@
         >
     <testsuites>
         <testsuite name="phplx Prize Raffle Console Application test suite">
-            <directory>./tests/Phplx/</directory>
+            <directory>./tests/Phplx/Raffle</directory>
         </testsuite>
     </testsuites>
 
     <filter>
         <whitelist>
-            <directory>./src/Phplx/</directory>
+            <directory>./src/Phplx/Raffle</directory>
         </whitelist>
     </filter>
 </phpunit>

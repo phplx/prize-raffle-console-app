@@ -6,10 +6,10 @@ parameters:
   eventbrite.api_keys:
     app_key: YOUR_APP_KEY
     user_key: YOUR_USER_KEY
-  data_adapter.class: 'Phplx\DataAdapter\FileSystemDataAdapter'
-  provider.class: 'Phplx\Provider\EventbriteProvider'
+  data_adapter.class: 'Phplx\Raffle\DataAdapter\FileSystemDataAdapter'
+  provider.class: 'Phplx\Raffle\Provider\EventbriteProvider'
   provider.class.argument: '@eventbrite'
-  twitter_social_handler.class: 'Phplx\SocialAdapter\TwitterSocialAdapter'
+  twitter_social_handler.class: 'Phplx\Raffle\SocialAdapter\TwitterSocialAdapter'
   twitter_social_handler.consumer_key: 'YOUR_TWITTER_CONSUMER_KEY'
   twitter_social_handler.consumer_secret: 'YOUR_TWITTER_CONSUMER_SECRET'
   twitter_social_handler.access_token: 'YOUR_TWITTER_ACCESS_TOKEN'
