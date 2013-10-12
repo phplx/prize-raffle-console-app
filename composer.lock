@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "7ec0343a1d8a5f22c1907bf816fe85ed",
+    "hash": "73905d83960429f2c59a110c1a54768e",
     "packages": [
         {
             "name": "danielcsgomes/eventbrite-api-connector",

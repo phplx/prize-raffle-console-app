@@ -19,4 +19,4 @@ EOT
     );
 }
 
-$loader->add('Phplx\Tests', __DIR__);
+$loader->add('Phplx\Raffle\Tests', __DIR__);

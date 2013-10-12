@@ -10,13 +10,13 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use Phplx\Application;
-use Phplx\Command\FetchAttendeesCommand;
-use Phplx\Command\ListPrizesCommand;
-use Phplx\Command\ListWinnersCommand;
-use Phplx\Command\LoadPrizesCommand;
-use Phplx\Command\RaffleCommand;
-use Phplx\Command\TweetCommand;
+use Phplx\Raffle\Application;
+use Phplx\Raffle\Command\FetchAttendeesCommand;
+use Phplx\Raffle\Command\ListPrizesCommand;
+use Phplx\Raffle\Command\ListWinnersCommand;
+use Phplx\Raffle\Command\LoadPrizesCommand;
+use Phplx\Raffle\Command\RaffleCommand;
+use Phplx\Raffle\Command\TweetCommand;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
@@ -24,7 +24,7 @@ $configDirectories = array(
     __DIR__ . '/../config'
 );
 
-$container = include __DIR__ . '/../src/container.php';
+$container = include __DIR__ . '/../src/Phplx/Raffle/container.php';
 
 $loader = new YamlFileLoader($container, new FileLocator($configDirectories));
 $loader->load('parameters.yaml');
