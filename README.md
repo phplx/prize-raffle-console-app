@@ -1,6 +1,6 @@
 # **phplx** Prize Raffle Console Application
 
-[![Build Status](https://secure.travis-ci.org/phplx/prize-raffle-console-app.png?branch=master)](http://travis-ci.org/phplx/prize-raffle-console-app)
+[![Build Status](https://secure.travis-ci.org/phplx/prize-raffle-console-app.png?branch=master)](http://travis-ci.org/phplx/prize-raffle-console-app) [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/phplx/prize-raffle-console-app/badges/quality-score.png?s=72524ae87dea871365424192e3d6c3c545f538f5)](https://scrutinizer-ci.com/g/phplx/prize-raffle-console-app/)
 
 What this application do:
 
