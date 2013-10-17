@@ -45,7 +45,7 @@ class RaffleCommandTest extends BaseCommandTest
         $this->assertContains('The winner of', $commandTester->getDisplay());
     }
 
-    public function testRaffleAPrizeAndTweetTheWinner()
+    public function testRaffleAPrizeAndTweetTheWinnerWithoutTwitterHandler()
     {
         // Set the TwitterSocialHandler Mock
         $this->application->getContainer()->setParameter(
@@ -81,7 +81,46 @@ class RaffleCommandTest extends BaseCommandTest
         );
 
         $this->assertContains('The winner of', $commandTester->getDisplay());
-        $this->assertContains('Tweet sent successfully', $commandTester->getDisplay());
+        $this->assertContains('Tweet sent successfully: Daniel Gomes', $commandTester->getDisplay());
+    }
+
+    public function testRaffleAPrizeAndTweetTheWinnerWithTwitterHandler()
+    {
+        // Set the TwitterSocialHandler Mock
+        $this->application->getContainer()->setParameter(
+            'twitter_social_handler.class',
+            'Phplx\Raffle\Tests\MockTwitterSocialHandler'
+        );
+
+        copy(__DIR__ . '/../Fixtures/testRaffleWithTwitterHandler.json', $this->cacheDir . '/test.json');
+
+        $this->application->add(new RaffleCommand());
+        $this->application->add(new TweetCommand());
+
+        $command = $this->application->find('meetup:raffle');
+
+        // Mock the DialogHelper
+        $dialog = $this->getMock('Symfony\Component\Console\Helper\DialogHelper', array('askConfirmation', 'select'));
+        $dialog->expects($this->atLeastOnce())
+            ->method('askConfirmation')
+            ->will($this->returnValue('yes'));
+        $dialog->expects($this->once())
+            ->method('select')
+            ->will($this->returnValue(0));
+
+        // We override the standard helper with our mock
+        $command->getHelperSet()->set($dialog, 'dialog');
+
+        $commandTester = new CommandTester($command);
+        $commandTester->execute(
+            array(
+                 'command' => $command->getName(),
+                 'event_id' => 'test'
+            )
+        );
+
+        $this->assertContains('The winner of', $commandTester->getDisplay());
+        $this->assertContains('Tweet sent successfully: @danielcsgomes', $commandTester->getDisplay());
     }
 
     public function tearDown()

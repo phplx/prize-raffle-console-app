@@ -43,7 +43,7 @@ class TweetCommand extends Command
         $result = $twitterHandler->tweet($tweetMessage);
 
         if ($result) {
-            $output->writeln('<info>Tweet sent successfully</info>');
+            $output->writeln("<info>Tweet sent successfully:</info> $result");
             return;
         }
 

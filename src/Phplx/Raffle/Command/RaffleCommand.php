@@ -124,7 +124,6 @@ class RaffleCommand extends Command
      * @param OutputInterface $output
      * @param string $prize The prize name
      * @return Attendee
-     * @throws \Phplx\Raffle\Exception\WinnerNotFoundException
      */
     private function getRandomAttendee(OutputInterface $output, $prize)
     {
@@ -146,7 +145,7 @@ class RaffleCommand extends Command
 
             $isWinner = $this->getHelper('dialog')->askConfirmation(
                 $output,
-                'Save the Winner? (yes/no) ',
+                'Save the Winner? (no) ',
                 false
             );
         }
