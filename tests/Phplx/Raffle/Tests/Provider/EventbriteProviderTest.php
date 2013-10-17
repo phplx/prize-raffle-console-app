@@ -23,10 +23,6 @@ class EventbriteProviderTest extends \PHPUnit_Framework_TestCase
      */
     private $eventbriteProvider;
     /**
-     * @var string
-     */
-    private $dummyContent;
-    /**
      * @var Eventbrite
      */
     private $eventbrite;

@@ -20,10 +20,6 @@ class MockDataAdapter implements DataAdapterInterface
      * @var Event
      */
     private $event;
-    /**
-     * @var Prize
-     */
-    private $prize;
 
     public function hasEvent($eventId)
     {
