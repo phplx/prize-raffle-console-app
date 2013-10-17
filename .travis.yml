@@ -8,5 +8,6 @@ php:
 before_script:
     - composer self-update
     - composer install --dev
+    - cp ./config/parameters.yaml.dist ./config/parameters.yaml
 
 script: ./vendor/bin/phpunit

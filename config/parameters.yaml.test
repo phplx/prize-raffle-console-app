@@ -1,0 +1,16 @@
+parameters:
+  buzz.client: 'Buzz\Client\Curl'
+  buzz.message_factory: 'Buzz\Message\Factory\Factory'
+  eventbrite.http_adapter.class: 'EventbriteApiConnector\HttpAdapter\BuzzHttpAdapter'
+  eventbrite.http_adapter.argument: '@buzz'
+  eventbrite.api_keys:
+    app_key: SHZBQBFZD26VH7STPR
+    user_key: 132070909323111942442
+  data_adapter.class: 'Phplx\Raffle\DataAdapter\FileSystemDataAdapter'
+  provider.class: 'Phplx\Raffle\Provider\EventbriteProvider'
+  provider.class.argument: '@eventbrite'
+  twitter_social_handler.class: 'Phplx\Raffle\SocialHandler\TwitterSocialHandler'
+  twitter_social_handler.consumer_key: 'WbbTaEP2hZvfISj3Iag9Lw'
+  twitter_social_handler.consumer_secret: 'BM7kB8ofVPPv5f18J7d75HhuPmiIyW1hwkK4iZuu0'
+  twitter_social_handler.access_token: '919700461-4fooxotvwCY17I2uIputwEhr4RQYGWd3kcvcqZv4'
+  twitter_social_handler.access_token_secret: 'Ci7ZFt0xtxVGKDL7Qwz6X9totqW12BkARY2LaDamkI'
