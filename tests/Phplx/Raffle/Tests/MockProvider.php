@@ -22,6 +22,7 @@ class MockProvider implements ProviderInterface
         $attendee->setEmail('me@danielcsgomes.com');
         $attendee->setName('Daniel Gomes');
         $attendee->setTwitterHandler('');
+
         return array($attendee);
     }
 }

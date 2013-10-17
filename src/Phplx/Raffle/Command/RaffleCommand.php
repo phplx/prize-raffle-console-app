@@ -18,7 +18,6 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
@@ -77,6 +76,7 @@ class RaffleCommand extends Command
                     if (empty($eventId)) {
                         throw new \InvalidArgumentException('The event ID can not be empty.');
                     }
+
                     return $eventId;
                 }
             );
@@ -121,8 +121,8 @@ class RaffleCommand extends Command
     }
 
     /**
-     * @param OutputInterface $output
-     * @param string $prize The prize name
+     * @param  OutputInterface $output
+     * @param  string          $prize  The prize name
      * @return Attendee
      */
     private function getRandomAttendee(OutputInterface $output, $prize)
@@ -176,7 +176,7 @@ class RaffleCommand extends Command
     {
         $prizes = array();
         foreach ($prizesList as $key => $prize) {
-            $prizes[$key] = (string)$prize;
+            $prizes[$key] = (string) $prize;
         }
 
         return $this->getHelper('dialog')->select(

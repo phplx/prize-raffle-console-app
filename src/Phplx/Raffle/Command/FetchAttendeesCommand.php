@@ -14,7 +14,6 @@ use Phplx\Raffle\Model\Event;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
@@ -63,7 +62,7 @@ class FetchAttendeesCommand extends Command
 
         if ($doGetAttendees) {
             $this->event->clearAttendees();
-            $attendees = $container->get('provider')->getAttendees((string)$this->event);
+            $attendees = $container->get('provider')->getAttendees((string) $this->event);
             $this->event->setAttendees($attendees);
             $dataHandler->saveEvent($this->event);
             $output->writeln(
@@ -87,6 +86,7 @@ class FetchAttendeesCommand extends Command
                     if (empty($eventId)) {
                         throw new \Exception('The event ID can not be empty.');
                     }
+
                     return $eventId;
                 }
             );

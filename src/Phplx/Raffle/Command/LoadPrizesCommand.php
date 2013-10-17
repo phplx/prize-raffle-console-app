@@ -15,7 +15,6 @@ use Phplx\Raffle\Model\Prize;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
@@ -76,7 +75,7 @@ class LoadPrizesCommand extends Command
     /**
      * Gets the prizes content from a file
      *
-     * @param string $file The file path
+     * @param  string            $file The file path
      * @throws \RuntimeException
      */
     private function loadPrizes($file)
@@ -93,7 +92,7 @@ class LoadPrizesCommand extends Command
     /**
      * Parses the content into the Event.
      *
-     * @param string $prizes
+     * @param  string     $prizes
      * @throws \Exception
      */
     private function parsePrizes($prizes)
@@ -126,6 +125,7 @@ class LoadPrizesCommand extends Command
                     if (empty($eventId)) {
                         throw new \Exception('The event ID can not be empty.');
                     }
+
                     return $eventId;
                 }
             );

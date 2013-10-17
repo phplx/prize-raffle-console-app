@@ -14,7 +14,6 @@ use Phplx\Raffle\Model\Event;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
@@ -71,6 +70,7 @@ class ListPrizesCommand extends Command
                     if (empty($eventId)) {
                         throw new \Exception('The event ID can not be empty.');
                     }
+
                     return $eventId;
                 }
             );

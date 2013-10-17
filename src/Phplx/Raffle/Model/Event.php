@@ -108,11 +108,10 @@ class Event
         $this->prizes = $prizes;
     }
 
-
     /**
      * Gets Attendees
      *
-     * @param bool $toArray
+     * @param  bool  $toArray
      * @return array The list of Attendees
      */
     public function getAttendees($toArray = false)
@@ -122,6 +121,7 @@ class Event
             foreach ($this->attendees as $attendee) {
                 $attendees[] = $attendee->toArray();
             }
+
             return $attendees;
         }
 
@@ -131,7 +131,7 @@ class Event
     /**
      * Gets Prizes
      *
-     * @param bool $toArray
+     * @param  bool  $toArray
      * @return array The list of Prizes
      */
     public function getPrizes($toArray = false)
@@ -142,6 +142,7 @@ class Event
             foreach ($this->prizes as $prize) {
                 $prizes[] = $prize->toArray();
             }
+
             return $prizes;
         }
 
@@ -173,7 +174,7 @@ class Event
      */
     public function __toString()
     {
-        return (string)$this->getId();
+        return (string) $this->getId();
     }
 
     /**
@@ -185,6 +186,7 @@ class Event
         if (array() !== $this->attendees && count($this->attendees) > 0) {
             return true;
         }
+
         return false;
     }
 
@@ -213,13 +215,14 @@ class Event
         if (array() !== $this->prizes && count($this->prizes) > 0) {
             return true;
         }
+
         return false;
     }
 
     /**
      * Gets a random Attendee and remove it from the Event
      *
-     * @return Attendee The attendee
+     * @return Attendee             The attendee
      * @throws \OutOfRangeException
      */
     public function popRandomAttendee()
@@ -243,7 +246,7 @@ class Event
     /**
      * Remove a prize from Event
      *
-     * @param int $index
+     * @param  int   $index
      * @return Prize The prize
      */
     public function popPrize($index)

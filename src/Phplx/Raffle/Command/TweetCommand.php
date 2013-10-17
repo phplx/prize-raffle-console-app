@@ -13,7 +13,6 @@ namespace Phplx\Raffle\Command;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
@@ -44,6 +43,7 @@ class TweetCommand extends Command
 
         if ($result) {
             $output->writeln("<info>Tweet sent successfully:</info> $result");
+
             return;
         }
 
@@ -63,6 +63,7 @@ class TweetCommand extends Command
                     if (empty($tweetMessage)) {
                         throw new \InvalidArgumentException('The tweet message can not be empty.');
                     }
+
                     return $tweetMessage;
                 }
             );

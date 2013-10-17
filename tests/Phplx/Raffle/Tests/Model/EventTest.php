@@ -91,7 +91,7 @@ class EventTest extends \PHPUnit_Framework_TestCase
         $event = new Event('test');
         $expected = array(
             'event' => array(
-                'id' => (string)$event,
+                'id' => (string) $event,
                 'attendees' => $event->getAttendees(true),
                 'prizes' => $event->getPrizes(true)
             )

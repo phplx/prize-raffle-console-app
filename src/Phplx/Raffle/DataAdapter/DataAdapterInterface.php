@@ -21,7 +21,7 @@ interface DataAdapterInterface
     /**
      * Verifies if the Event exists
      *
-     * @param string $eventId
+     * @param  string $eventId
      * @return bool
      */
     public function hasEvent($eventId);
@@ -29,7 +29,7 @@ interface DataAdapterInterface
     /**
      * Saves Event data
      *
-     * @param Event $event
+     * @param  Event             $event
      * @return null
      * @throws \RuntimeException
      */
@@ -38,7 +38,7 @@ interface DataAdapterInterface
     /**
      * Gets Event data
      *
-     * @param  string $eventId
+     * @param  string            $eventId
      * @return Event
      * @throws \RuntimeException
      */
@@ -47,8 +47,8 @@ interface DataAdapterInterface
     /**
      * Saves the prize winner with the prize information
      *
-     * @param string $eventId
-     * @param Prize $prize
+     * @param  string            $eventId
+     * @param  Prize             $prize
      * @return null
      * @throws \RuntimeException
      */
@@ -57,8 +57,8 @@ interface DataAdapterInterface
     /**
      * Gets the winners list
      *
-     * @param  string $eventId
-     * @return array List of Prize
+     * @param  string            $eventId
+     * @return array             List of Prize
      * @throws \RuntimeException
      */
     public function getWinners($eventId);

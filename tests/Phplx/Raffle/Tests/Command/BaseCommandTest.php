@@ -4,7 +4,6 @@ namespace Phplx\Raffle\Tests\Command;
 
 use Phplx\Raffle\Application;
 use Symfony\Component\Config\FileLocator;
-use Symfony\Component\Console\Tester\CommandTester;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 abstract class BaseCommandTest extends \PHPUnit_Framework_TestCase
@@ -20,7 +19,6 @@ abstract class BaseCommandTest extends \PHPUnit_Framework_TestCase
         $this->cacheDir = __DIR__ . '/../../../../../cache';
 
         $this->application = new Application();
-
 
         $configDirectories = array(
             __DIR__ . '/../../../../../config'

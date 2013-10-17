@@ -10,14 +10,13 @@
 
 namespace Phplx\Raffle\Provider;
 
-
 interface ProviderInterface
 {
     /**
      * Fetch the attendees from a specific event
      *
-     * @param string $eventId
-     * @return array A list of \Phplx\Raffle\Model\Attendee
+     * @param  string $eventId
+     * @return array  A list of \Phplx\Raffle\Model\Attendee
      */
     public function getAttendees($eventId);
 }

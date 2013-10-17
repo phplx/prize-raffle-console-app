@@ -43,8 +43,8 @@ class EventbriteProvider implements ProviderInterface
     }
 
     /**
-     * @param string $json The response content must be a valid json string
-     * @return array A list of \Phplx\Raffle\Model\Attendee
+     * @param  string     $json The response content must be a valid json string
+     * @return array      A list of \Phplx\Raffle\Model\Attendee
      * @throws \Exception
      */
     private function parseAttendees($json)
@@ -67,7 +67,7 @@ class EventbriteProvider implements ProviderInterface
             return $attendees;
         } catch (\Exception $error) {
             if ($jsonError = json_last_error()) {
-                throw new \Exception((string)$jsonError);
+                throw new \Exception((string) $jsonError);
             }
 
             throw new \Exception('Unable to parse Attendees');
@@ -77,7 +77,7 @@ class EventbriteProvider implements ProviderInterface
     /**
      * Get the Twitter username
      *
-     * @param \stdClass $attendee
+     * @param  \stdClass $attendee
      * @return null
      *
      * @TODO - Make the twitter username question maps dynamically without knowing the question text, probably with DI parameter
