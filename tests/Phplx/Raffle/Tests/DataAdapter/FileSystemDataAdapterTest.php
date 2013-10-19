@@ -26,6 +26,7 @@ class FileSystemDataAdapterTest extends \PHPUnit_Framework_TestCase
     {
         $this->fsDataAdapter = new FileSystemDataAdapter();
         $this->fsDataAdapter->setBaseDir(sys_get_temp_dir());
+        $this->fsDataAdapter->setWinnersDir(sys_get_temp_dir());
     }
 
     public function testSaveEvent()
@@ -122,7 +123,7 @@ class FileSystemDataAdapterTest extends \PHPUnit_Framework_TestCase
 
         $this->fsDataAdapter->saveWinner('testSaveWinner', $mock);
 
-        $filename = "{$this->fsDataAdapter->getBaseDir()}/testSaveWinner_winners.json";
+        $filename = sprintf($this->fsDataAdapter->getWinnersDir(), 'testSaveWinner');
 
         $this->assertFileExists($filename);
         $this->assertJson(file_get_contents($filename));
@@ -155,5 +156,31 @@ class FileSystemDataAdapterTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertInternalType('array', $this->fsDataAdapter->getWinners('testSaveWinner'));
         unlink($filename);
+    }
+
+    public function testClearWinnersWithExistingFile()
+    {
+        $content = 'test';
+
+        $filename = sprintf($this->fsDataAdapter->getWinnersDir(), 'testSaveWinner');
+
+        file_put_contents($filename, $content);
+
+        $this->assertFileExists($filename);
+        $this->fsDataAdapter->clearWinners('testSaveWinner', $content);
+
+
+        $this->assertEquals('', file_get_contents($filename));
+    }
+
+    /**
+     * @expectedException \RuntimeException
+     */
+    public function testClearWinnersWithoutFile()
+    {
+        $filename = sprintf($this->fsDataAdapter->getWinnersDir(), 'testNoFile');
+
+        $this->assertFileNotExists($filename);
+        $this->fsDataAdapter->clearWinners('testNoFile');
     }
 }

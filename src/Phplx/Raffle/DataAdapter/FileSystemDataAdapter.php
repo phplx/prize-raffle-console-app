@@ -20,10 +20,12 @@ use Phplx\Raffle\Model\Prize;
 class FileSystemDataAdapter implements DataAdapterInterface
 {
     private $baseDir;
+    private $winnersDir;
 
     public function __construct()
     {
         $this->baseDir = __DIR__ . '/../../../../cache';
+        $this->winnersDir = $this->baseDir . '/%s_winners.json';
     }
 
     /**
@@ -147,7 +149,7 @@ class FileSystemDataAdapter implements DataAdapterInterface
      */
     public function saveWinner($eventId, Prize $prize)
     {
-        $filename = "{$this->baseDir}/{$eventId}_winners.json";
+        $filename = sprintf($this->winnersDir, $eventId);
 
         $prizes = array();
 
@@ -166,15 +168,31 @@ class FileSystemDataAdapter implements DataAdapterInterface
     }
 
     /**
-     * Gets the winners list
-     *
-     * @param  string            $eventId
-     * @return array             List of Prize
-     * @throws \RuntimeException
+     * @inheritdoc
      */
     public function getWinners($eventId)
     {
-        $data = file_get_contents("{$this->baseDir}/{$eventId}_winners.json");
+        $data = file_get_contents(sprintf($this->winnersDir, $eventId));
+
+        if (false === $data) {
+            throw new \RuntimeException("Failed to open the file {$eventId}_winners.json");
+        }
+
+        return json_decode($data);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function clearWinners($eventId)
+    {
+        $filename = sprintf($this->winnersDir, $eventId);
+
+        if (!file_exists($filename)) {
+            throw new \RuntimeException("File does not exists ({$eventId}_winners.json).");
+        }
+
+        $data = file_put_contents($filename, '');
 
         if (false === $data) {
             throw new \RuntimeException("Failed to open the file {$eventId}_winners.json");
@@ -206,5 +224,21 @@ class FileSystemDataAdapter implements DataAdapterInterface
     public function getBaseDir()
     {
         return $this->baseDir;
+    }
+
+    /**
+     * @param string $winnersDir
+     */
+    public function setWinnersDir($winnersDir)
+    {
+        $this->winnersDir = $winnersDir . '/%s_winners.json';
+    }
+
+    /**
+     * @return string
+     */
+    public function getWinnersDir()
+    {
+        return $this->winnersDir;
     }
 }
