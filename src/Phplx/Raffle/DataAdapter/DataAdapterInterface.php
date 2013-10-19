@@ -57,7 +57,7 @@ interface DataAdapterInterface
     /**
      * Gets the winners list
      *
-     * @param  string $eventId
+     * @param  string            $eventId
      * @return array             List of Prize
      * @throws \RuntimeException
      */
@@ -66,7 +66,7 @@ interface DataAdapterInterface
     /**
      * Clears the winners list
      *
-     * @param  string $eventId
+     * @param  string            $eventId
      * @return bool
      * @throws \RuntimeException
      */

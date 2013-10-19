@@ -49,6 +49,7 @@ class ClearWinnersListCommand extends Command
 
         if (!$answer) {
             $output->writeln('<info>The clear winners list command was cancelled.</info>');
+
             return;
         }
 

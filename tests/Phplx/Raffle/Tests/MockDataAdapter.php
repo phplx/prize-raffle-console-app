@@ -47,7 +47,7 @@ class MockDataAdapter implements DataAdapterInterface
     {
     }
 
-    public function clearWinners($eventId){
-        
+    public function clearWinners($eventId)
+    {
     }
 }

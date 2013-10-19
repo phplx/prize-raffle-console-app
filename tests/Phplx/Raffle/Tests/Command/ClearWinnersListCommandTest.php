@@ -3,8 +3,6 @@
 namespace Phplx\Raffle\Tests\Command;
 
 use Phplx\Raffle\Command\ClearWinnersListCommand;
-use Phplx\Raffle\DataAdapter\DataAdapterInterface;
-use Phplx\Raffle\DataAdapter\FileSystemDataAdapter;
 use Symfony\Component\Console\Tester\CommandTester;
 
 class ClearWinnersListCommandTest extends BaseCommandTest

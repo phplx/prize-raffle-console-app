@@ -169,7 +169,6 @@ class FileSystemDataAdapterTest extends \PHPUnit_Framework_TestCase
         $this->assertFileExists($filename);
         $this->fsDataAdapter->clearWinners('testSaveWinner', $content);
 
-
         $this->assertEquals('', file_get_contents($filename));
     }
 
