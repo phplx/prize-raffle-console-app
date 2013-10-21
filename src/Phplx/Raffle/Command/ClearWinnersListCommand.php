@@ -21,7 +21,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 class ClearWinnersListCommand extends Command
 {
     /**
-     * @See Command
+     * @see Command
      */
     protected function configure()
     {
@@ -35,7 +35,7 @@ class ClearWinnersListCommand extends Command
     }
 
     /**
-     * @See Command
+     * @see Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
@@ -62,7 +62,7 @@ class ClearWinnersListCommand extends Command
     }
 
     /**
-     * @See Command
+     * @see Command
      */
     protected function interact(InputInterface $input, OutputInterface $output)
     {

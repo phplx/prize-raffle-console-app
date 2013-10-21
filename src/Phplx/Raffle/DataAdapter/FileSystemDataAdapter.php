@@ -168,7 +168,7 @@ class FileSystemDataAdapter implements DataAdapterInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function getWinners($eventId)
     {
@@ -182,7 +182,7 @@ class FileSystemDataAdapter implements DataAdapterInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function clearWinners($eventId)
     {
