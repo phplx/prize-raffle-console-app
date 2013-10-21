@@ -27,7 +27,7 @@ class FetchAttendeesCommand extends Command
     private $event;
 
     /**
-     * @See Command
+     * @see Command
      */
     protected function configure()
     {
@@ -41,7 +41,7 @@ class FetchAttendeesCommand extends Command
     }
 
     /**
-     * @See Command
+     * @see Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
@@ -74,7 +74,7 @@ class FetchAttendeesCommand extends Command
     }
 
     /**
-     * @See Command
+     * @see Command
      */
     protected function interact(InputInterface $input, OutputInterface $output)
     {

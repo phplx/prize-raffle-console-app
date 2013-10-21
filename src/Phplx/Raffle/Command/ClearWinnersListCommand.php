@@ -10,7 +10,6 @@
  */
 namespace Phplx\Raffle\Command;
 
-use Phplx\Raffle\Model\Event;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -19,23 +18,20 @@ use Symfony\Component\Console\Output\OutputInterface;
 /**
  * @author  Daniel Gomes <me@danielcsgomes.com>
  */
-class ListPrizesCommand extends Command
+class ClearWinnersListCommand extends Command
 {
-    /**
-     * @var Event
-     */
-    private $event;
-
     /**
      * @see Command
      */
     protected function configure()
     {
         $this
-            ->setName('meetup:prizes:list')
-            ->setDescription('Lists the prizes of an Event.')
+            ->setName('meetup:winners:clear')
+            ->setDescription('Clear the list of winners of an Event.')
             ->addArgument('event_id', InputArgument::REQUIRED, 'The event ID')
-            ->setHelp('The <info>meetup:prizes:list</info> command will list the prize of an event.');
+            ->setHelp(
+                'The <info>meetup:winners:clear</info> command will remove all winners of an event.'
+            );
     }
 
     /**
@@ -45,15 +41,23 @@ class ListPrizesCommand extends Command
     {
         $dataHandler = $this->getApplication()->getContainer()->get('data_adapter');
 
-        $this->event = $dataHandler->getEvent($input->getArgument('event_id'));
+        $answer = $this->getHelper('dialog')->askConfirmation(
+            $output,
+            'Do you want to remove all winners? <info>[no]</info> ',
+            false
+        );
 
-        if (!$this->event->hasPrizes()) {
-            throw new \Exception('This event has no prizes setted.');
+        if (!$answer) {
+            $output->writeln('<info>The clear winners list command was cancelled.</info>');
+
+            return;
         }
 
-        $output->writeln("<info>List of prizes:</info>");
-        foreach ($this->event->getPrizes() as $prize) {
-            $output->writeln("<comment>{$prize->getSponsorName()} - {$prize->getPrizeTitle()}</comment>");
+        try {
+            $dataHandler->clearWinners($input->getArgument('event_id'));
+            $output->writeln('<info>List of winners is now cleared.</info>');
+        } catch (\RuntimeException $error) {
+            $output->writeln(sprintf('<error>%s</error>', $error->getMessage()));
         }
     }
 

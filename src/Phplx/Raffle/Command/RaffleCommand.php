@@ -35,7 +35,7 @@ class RaffleCommand extends Command
     private $dataHandler;
 
     /**
-     * @See Command
+     * @see Command
      */
     protected function configure()
     {
@@ -47,7 +47,7 @@ class RaffleCommand extends Command
     }
 
     /**
-     * @See Command
+     * @see Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
@@ -64,7 +64,7 @@ class RaffleCommand extends Command
     }
 
     /**
-     * @See Command
+     * @see Command
      */
     protected function interact(InputInterface $input, OutputInterface $output)
     {

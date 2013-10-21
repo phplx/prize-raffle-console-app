@@ -28,7 +28,7 @@ class LoadPrizesCommand extends Command
     private $event;
 
     /**
-     * @See Command
+     * @see Command
      */
     protected function configure()
     {
@@ -43,7 +43,7 @@ class LoadPrizesCommand extends Command
     }
 
     /**
-     * @See Command
+     * @see Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
@@ -113,7 +113,7 @@ class LoadPrizesCommand extends Command
     }
 
     /**
-     * @See Command
+     * @see Command
      */
     protected function interact(InputInterface $input, OutputInterface $output)
     {

@@ -62,4 +62,13 @@ interface DataAdapterInterface
      * @throws \RuntimeException
      */
     public function getWinners($eventId);
+
+    /**
+     * Clears the winners list
+     *
+     * @param  string            $eventId
+     * @return bool
+     * @throws \RuntimeException
+     */
+    public function clearWinners($eventId);
 }
