@@ -79,8 +79,6 @@ class EventbriteProvider implements ProviderInterface
      *
      * @param  \stdClass $attendee
      * @return null
-     *
-     * @TODO - Make the twitter username question maps dynamically without knowing the question text, probably with DI parameter
      */
     private function getTwitterUsername(\stdClass $attendee)
     {

@@ -14,6 +14,7 @@ use Phplx\Raffle\DataAdapter\DataAdapterInterface;
 use Phplx\Raffle\Exception\EventNotFoundException;
 use Phplx\Raffle\Model\Attendee;
 use Phplx\Raffle\Model\Event;
+use Phplx\Raffle\Model\Prize;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Input\InputArgument;
@@ -104,9 +105,9 @@ class RaffleCommand extends Command
 
     /**
      * @param OutputInterface $output
-     * @param $prize
+     * @param Prize           $prize
      */
-    private function tweetWinner(OutputInterface $output, $prize)
+    private function tweetWinner(OutputInterface $output, Prize $prize)
     {
         if ($this->isToTweet($output, $prize->getTweetMessage())) {
             $tweetCmd = $this->getApplication()->find('twitter:tweet');

@@ -18,7 +18,6 @@ use Phplx\Raffle\Command\RaffleCommand;
 use Phplx\Raffle\Command\TweetCommand;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\Console\Application as BaseApplication;
-use Symfony\Component\Console\Command\Command;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;

@@ -39,6 +39,7 @@ php bin/phplx.php
 
  * Add new commands like **listing all events**, **send email to winner**.
  * Add more **DataAdapters** and **Providers**
+ * Make the twitter username maps dynamically without knowing the question text in the Eventbrite Provider
 
 [![phplx](https://secure.gravatar.com/avatar/c67d21c0c2ba2be3bfe2c550039fc5d3?s=100)](http://phplx.net)
 
