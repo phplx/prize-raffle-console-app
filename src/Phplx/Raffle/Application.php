@@ -27,7 +27,7 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
  */
 class Application extends BaseApplication implements ContainerAwareInterface
 {
-    const VERSION = '1.1.0';
+    const VERSION = '1.1.1';
     /**
      * @var ContainerInterface
      */
