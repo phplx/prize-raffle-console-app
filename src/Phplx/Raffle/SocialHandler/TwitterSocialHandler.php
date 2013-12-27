@@ -50,5 +50,4 @@ class TwitterSocialHandler
             'POST'
         );
     }
-
 }

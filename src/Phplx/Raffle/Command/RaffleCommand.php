@@ -155,8 +155,8 @@ class RaffleCommand extends Command
     }
 
     /**
-     * @param OutputInterface $output
-     * @param $tweetMessage
+     * @param  OutputInterface $output
+     * @param  string          $tweetMessage
      * @return mixed
      */
     private function isToTweet(OutputInterface $output, $tweetMessage)

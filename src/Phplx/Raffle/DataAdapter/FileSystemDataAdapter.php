@@ -10,6 +10,7 @@
  */
 namespace Phplx\Raffle\DataAdapter;
 
+use Phplx\Raffle\Exception\FilesystemException;
 use Phplx\Raffle\Model\Attendee;
 use Phplx\Raffle\Model\Event;
 use Phplx\Raffle\Model\Prize;
@@ -24,7 +25,17 @@ class FileSystemDataAdapter implements DataAdapterInterface
 
     public function __construct()
     {
-        $this->baseDir = __DIR__ . '/../../../../cache';
+        $baseDir = realpath('./') ? : dirname(realpath($_SERVER['argv'][0]));
+
+        // check if current dir is writable and if not try the cache dir inside /tmp directory
+        $tmpDir = is_writable($baseDir) ? $baseDir : '/tmp/prize-raffle/cache';
+
+        // check for permissions in local filesystem
+        if (!is_writable($tmpDir)) {
+            throw new FilesystemException('Unable to write the files inside the "' . $tmpDir . '" directory.');
+        }
+
+        $this->baseDir = $tmpDir . '/cache';
         $this->winnersDir = $this->baseDir . '/%s_winners.json';
     }
 
@@ -38,7 +49,7 @@ class FileSystemDataAdapter implements DataAdapterInterface
     public function saveEvent(Event $event)
     {
         $filename = "{$this->baseDir}/{$event->getId()}.json";
-        $saved = file_put_contents($filename, $event->toJson(), LOCK_EX);
+        $saved = file_put_contents($filename, $event->toJson());
 
         if (false === $saved) {
             throw new \RuntimeException("Failed to write on the file {$event->getId()}.json");
@@ -160,7 +171,7 @@ class FileSystemDataAdapter implements DataAdapterInterface
 
         $prizes[] = $prize->toArray();
 
-        $saved = file_put_contents($filename, json_encode($prizes), LOCK_EX);
+        $saved = file_put_contents($filename, json_encode($prizes));
 
         if (false === $saved) {
             throw new \RuntimeException("Failed to write on the file {$eventId}_winners.json");
