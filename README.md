@@ -28,6 +28,7 @@ php composer.phar install -o --dev
 
 # Run
 php bin/phplx.php
+
 # or
 ./bin/phplx
 
@@ -45,4 +46,4 @@ php bin/phplx.php
 
 ## LICENSE
 
-Licensed under the [BSD LICENSE](https://github.com/phplx/prize-raffle-console-app/blob/master/LICENSE)
+Licensed under the [MIT LICENSE](https://github.com/phplx/prize-raffle-console-app/blob/master/LICENSE)
