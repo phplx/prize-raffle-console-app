@@ -56,7 +56,9 @@ class RaffleCommand extends Command
         $eventId = $input->getArgument('event_id');
 
         if (!$this->dataHandler->hasEvent($eventId)) {
-            throw new EventNotFoundException("The event does not exist. Fetch the Attendees and add prizes before start Raffling.");
+            throw new EventNotFoundException(
+                'The event does not exist. Fetch the Attendees and add prizes before start Raffling.'
+            );
         }
 
         $this->event = $this->dataHandler->getEvent($eventId);
@@ -137,7 +139,7 @@ class RaffleCommand extends Command
 
             $output->writeln(
                 sprintf(
-                    "<comment>The winner of the</comment> <info>%s</info> <comment>prize is</comment> <info>%s - %s</info>",
+                    '<comment>The winner of the</comment> <info>%s</info> <comment>prize is</comment> <info>%s - %s</info>',
                     $prize,
                     $attendee->getName(),
                     $attendee->getEmail()
