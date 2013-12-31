@@ -60,7 +60,7 @@ class ListWinnersCommand extends Command
                 'Please insert the event ID: ',
                 function ($eventId) {
                     if (empty($eventId)) {
-                        throw new \Exception('The event ID can not be empty.');
+                        throw new \Exception('The event ID cannot be empty.');
                     }
 
                     return $eventId;

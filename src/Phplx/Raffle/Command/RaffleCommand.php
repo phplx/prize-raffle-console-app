@@ -77,7 +77,7 @@ class RaffleCommand extends Command
                 'Please insert the event ID: ',
                 function ($eventId) {
                     if (empty($eventId)) {
-                        throw new \InvalidArgumentException('The event ID can not be empty.');
+                        throw new \InvalidArgumentException('The event ID cannot be empty.');
                     }
 
                     return $eventId;

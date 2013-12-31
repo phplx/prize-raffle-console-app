@@ -1,7 +1,7 @@
 {
     "name": "phplx/prize-raffle-console-app",
     "description": "Console Application to raffle prizes for phplx meetups",
-    "license": "BSD-3-Clause",
+    "license": "MIT",
     "authors": [
         {
             "name": "Daniel Gomes",

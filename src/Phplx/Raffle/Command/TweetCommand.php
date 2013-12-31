@@ -61,7 +61,7 @@ class TweetCommand extends Command
                 'Please insert the event ID: ',
                 function ($tweetMessage) {
                     if (empty($tweetMessage)) {
-                        throw new \InvalidArgumentException('The tweet message can not be empty.');
+                        throw new \InvalidArgumentException('The tweet message cannot be empty.');
                     }
 
                     return $tweetMessage;
