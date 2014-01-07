@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "73905d83960429f2c59a110c1a54768e",
+    "hash": "488618465ca4d22dc24c10c96c995089",
     "packages": [
         {
             "name": "danielcsgomes/eventbrite-api-connector",
@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/danielcsgomes/EventbriteApiConnector.git",
-                "reference": "f192e15faf9092f26528da4f3aa767e9cc5b6403"
+                "reference": "bda51495d982761f884d6196da7167d2a5026d4a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/danielcsgomes/EventbriteApiConnector/zipball/f192e15faf9092f26528da4f3aa767e9cc5b6403",
-                "reference": "f192e15faf9092f26528da4f3aa767e9cc5b6403",
+                "url": "https://api.github.com/repos/danielcsgomes/EventbriteApiConnector/zipball/bda51495d982761f884d6196da7167d2a5026d4a",
+                "reference": "bda51495d982761f884d6196da7167d2a5026d4a",
                 "shasum": ""
             },
             "require": {
@@ -30,9 +30,14 @@
                 "kriswallsmith/buzz": "Enabling Buzz allows you to use the BuzzHttpAdapter."
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.2.x-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
-                    "EventbriteApiConnector": "src/"
+                    "EventbriteApiConnector": "lib/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -52,7 +57,7 @@
                 "api",
                 "evenbrite"
             ],
-            "time": "2013-09-04 21:46:14"
+            "time": "2013-11-07 22:25:16"
         },
         {
             "name": "kriswallsmith/buzz",
@@ -205,12 +210,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "f880062d56edefb25b36f2defa65aafe65959dc7"
+                "reference": "15031c5ca7583997de218c1f5b1b406f621d18c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/f880062d56edefb25b36f2defa65aafe65959dc7",
-                "reference": "f880062d56edefb25b36f2defa65aafe65959dc7",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/15031c5ca7583997de218c1f5b1b406f621d18c3",
+                "reference": "15031c5ca7583997de218c1f5b1b406f621d18c3",
                 "shasum": ""
             },
             "require": {
@@ -249,7 +254,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2013-09-25 06:04:15"
+            "time": "2013-12-15 18:46:51"
         },
         {
             "name": "symfony/dependency-injection",
@@ -258,12 +263,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/DependencyInjection.git",
-                "reference": "81620c3551d411b0f7ec3bd6e978000569ec004a"
+                "reference": "f91b91445f3aa1f9b62dd5fb6f41e7ecbde1c809"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/DependencyInjection/zipball/81620c3551d411b0f7ec3bd6e978000569ec004a",
-                "reference": "81620c3551d411b0f7ec3bd6e978000569ec004a",
+                "url": "https://api.github.com/repos/symfony/DependencyInjection/zipball/f91b91445f3aa1f9b62dd5fb6f41e7ecbde1c809",
+                "reference": "f91b91445f3aa1f9b62dd5fb6f41e7ecbde1c809",
                 "shasum": ""
             },
             "require": {
@@ -305,21 +310,21 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "http://symfony.com",
-            "time": "2013-09-26 22:39:53"
+            "time": "2013-12-23 09:20:48"
         },
         {
             "name": "symfony/filesystem",
-            "version": "v2.3.6",
+            "version": "v2.4.0",
             "target-dir": "Symfony/Component/Filesystem",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Filesystem.git",
-                "reference": "2b8995042086c5552c94d33b5553c492e9cfc00e"
+                "reference": "79acd777762e81d0f3414ca25a602deeeb48240d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/2b8995042086c5552c94d33b5553c492e9cfc00e",
-                "reference": "2b8995042086c5552c94d33b5553c492e9cfc00e",
+                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/79acd777762e81d0f3414ca25a602deeeb48240d",
+                "reference": "79acd777762e81d0f3414ca25a602deeeb48240d",
                 "shasum": ""
             },
             "require": {
@@ -328,7 +333,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.3-dev"
+                    "dev-master": "2.4-dev"
                 }
             },
             "autoload": {
@@ -352,7 +357,54 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "http://symfony.com",
-            "time": "2013-09-19 09:45:20"
+            "time": "2013-11-16 15:13:54"
+        },
+        {
+            "name": "symfony/finder",
+            "version": "v2.3.4",
+            "target-dir": "Symfony/Component/Finder",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Finder.git",
+                "reference": "4a0fee5b86f5bbd9dfdc11ec124eba2915737ce1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Finder/zipball/4a0fee5b86f5bbd9dfdc11ec124eba2915737ce1",
+                "reference": "4a0fee5b86f5bbd9dfdc11ec124eba2915737ce1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Finder\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Finder Component",
+            "homepage": "http://symfony.com",
+            "time": "2013-08-13 20:18:00"
         },
         {
             "name": "symfony/yaml",
@@ -649,16 +701,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "3.7.27",
+            "version": "3.7.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "4b024e753e3421837afbcca962c8724c58b39376"
+                "reference": "3b97c8492bcafbabe6b6fbd2ab35f2f04d932a8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/4b024e753e3421837afbcca962c8724c58b39376",
-                "reference": "4b024e753e3421837afbcca962c8724c58b39376",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3b97c8492bcafbabe6b6fbd2ab35f2f04d932a8d",
+                "reference": "3b97c8492bcafbabe6b6fbd2ab35f2f04d932a8d",
                 "shasum": ""
             },
             "require": {
@@ -719,7 +771,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2013-09-16 03:09:52"
+            "time": "2013-10-17 07:27:40"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
