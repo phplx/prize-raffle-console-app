@@ -42,6 +42,8 @@ php bin/phplx.php
  * Add more **DataAdapters** and **Providers**
  * Make the twitter username maps dynamically without knowing the question text in the Eventbrite Provider
 
+## Sponsor by
+
 [![phplx](https://secure.gravatar.com/avatar/c67d21c0c2ba2be3bfe2c550039fc5d3?s=100)](http://phplx.net)
 
 ## LICENSE
