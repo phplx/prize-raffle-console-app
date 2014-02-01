@@ -84,9 +84,6 @@ class Compiler
 
         $phar->stopBuffering();
 
-        // Since we need to write files we will disable compress for now.
-        //$phar->compressFiles(\Phar::GZ);
-
         $this->addFile($phar, new \SplFileInfo(__DIR__ . '/../../LICENSE'), false);
 
         unset($phar);
