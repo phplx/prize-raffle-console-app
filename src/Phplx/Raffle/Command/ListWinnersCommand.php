@@ -46,7 +46,7 @@ class ListWinnersCommand extends Command
 
         $output->writeln("<info>List of winners:</info>");
         foreach ($winners as $winner) {
-            $output->writeln("<comment>{$winner->winner->name}</comment> - <info>{$winner->prize}</info>");
+            $output->writeln("<comment>{$winner->winner->name} <{$winner->winner->email}> </comment> - <info>{$winner->prize}</info>");
         }
     }
 
