@@ -22,7 +22,7 @@ class ListWinnersCommandTest extends BaseCommandTest
             )
         );
 
-        $this->assertContains('Daniel Gomes - Prize Name', $commandTester->getDisplay(), '', true);
+        $this->assertContains('daniel gomes', $commandTester->getDisplay(), '', true);
 
         unlink($this->cacheDir . '/test_winners.json');
     }
